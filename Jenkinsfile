@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent { lable 'jenkins-agent'}
+
+    tools {
+        maven 'maven'
+    }
 
     stages {
         stage('Build') {
