@@ -18,14 +18,14 @@ pipeline {
                 sh "mvn clean install -DskipTests"
             }
         }
-        stage('Test') {
+        stage('UnitTest') {
             steps {
-                echo 'Testing..'
+                sh "mvn test"
             }
         }
-        stage('Deploy') {
+        stage('Integration Test') {
             steps {
-                echo 'Deploying....'
+                sh 'mvn verify'
             }
         }
     }
